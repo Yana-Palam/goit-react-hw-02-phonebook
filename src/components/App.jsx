@@ -16,6 +16,13 @@ export class App extends Component {
   };
 
   addContact = (name, number) => {
+    const { contacts } = this.state;
+    const normalizedName = name.toLowerCase();
+
+    if (contacts.find(({ name }) => name.toLowerCase() === normalizedName)) {
+      return alert(`${name} is already in contacts`);
+    }
+
     const contact = {
       id: nanoid(),
       name,
@@ -39,6 +46,12 @@ export class App extends Component {
     );
   };
 
+  deleteContact = contactId => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+    }));
+  };
+
   render() {
     const { filter } = this.state;
     const visibleContacts = this.getVisibleContacts();
@@ -46,10 +59,16 @@ export class App extends Component {
       <div className="phonebook">
         <h1 className="phonebook__title">Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
-
         <h2 className="contacts__title">Contacts</h2>
         <Filter value={filter} onChange={this.changeFilter} />
-        <ContactList contacts={visibleContacts} />
+        {visibleContacts.length !== 0 ? (
+          <ContactList
+            contacts={visibleContacts}
+            onDeleteContact={this.deleteContact}
+          />
+        ) : (
+          <p className="contacts__message">No contacts added yet!</p>
+        )}
       </div>
     );
   }

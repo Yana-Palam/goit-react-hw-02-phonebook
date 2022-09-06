@@ -1,33 +1,33 @@
-.contact__form {
+.form {
   border: 2px solid #5446aa;
   border-radius: 8px;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  padding: 16px 30px;
+  padding: 16px 60px;
 }
 
-.contact__label {
+.label {
   font-size: 20px;
   font-weight: 600;
 }
 
-.contact__input {
+.input {
   font-size: 16px;
   padding: 8px;
-  width: 340px;
+  width: 370px;
 }
 
-.contact__input:focus,
-.contact__input:active {
+.input:focus,
+.input:active {
   outline: none;
   border-color: #5446aa;
 }
 
-.contact__button {
+.button {
   max-width: 120px;
-  padding: 8px 12px;
+  padding: 10px 12px;
   font-size: 16px;
   border-radius: 6px;
   border: none;
@@ -36,8 +36,8 @@
   transition: background-color 250ms linear;
 }
 
-.contact__button:hover,
-.contact__button:focus {
+.button:hover,
+.button:focus {
   cursor: pointer;
   background-color: #7968e7;
 }
