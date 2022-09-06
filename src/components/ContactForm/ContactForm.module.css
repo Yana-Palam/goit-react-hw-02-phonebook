@@ -8,12 +8,12 @@
   padding: 30px;
 }
 
-.contact__labelName {
+.contact__label {
   font-size: 20px;
   font-weight: 600;
 }
 
-.contact__inputName {
+.contact__input {
   font-size: 16px;
   padding: 8px;
   width: 340px;

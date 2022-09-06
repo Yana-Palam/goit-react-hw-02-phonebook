@@ -4,9 +4,9 @@ import s from './ContactList.module.css';
 const ContactList = ({ contacts }) => {
   return (
     <ul className={s.contact__list}>
-      {contacts.map(({ id, name }) => (
+      {contacts.map(({ id, name, number }) => (
         <li key={id} className={s.contact__item}>
-          {name}
+          {name}:&nbsp;{number}
         </li>
       ))}
     </ul>
