@@ -2,10 +2,10 @@
   border: 2px solid #5446aa;
   border-radius: 8px;
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   flex-direction: column;
-  gap: 16px;
-  padding: 30px;
+  gap: 10px;
+  padding: 16px 30px;
 }
 
 .contact__label {
@@ -17,6 +17,12 @@
   font-size: 16px;
   padding: 8px;
   width: 340px;
+}
+
+.contact__input:focus,
+.contact__input:active {
+  outline: none;
+  border-color: #5446aa;
 }
 
 .contact__button {
