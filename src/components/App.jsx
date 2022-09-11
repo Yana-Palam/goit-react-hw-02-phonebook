@@ -3,6 +3,8 @@ import { nanoid } from 'nanoid';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
+import { GlobalStyles } from 'utils/GlobalStyle';
+import { Wrapper, TitlePhonebook, TitleContacts, Message } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -56,10 +58,10 @@ export class App extends Component {
     const { filter } = this.state;
     const visibleContacts = this.getVisibleContacts();
     return (
-      <div className="phonebook">
-        <h1 className="phonebook__title">Phonebook</h1>
+      <Wrapper>
+        <TitlePhonebook>Phonebook</TitlePhonebook>
         <ContactForm onSubmit={this.addContact} />
-        <h2 className="contacts__title">Contacts</h2>
+        <TitleContacts>Contacts</TitleContacts>
         <Filter value={filter} onChange={this.changeFilter} />
         {visibleContacts.length !== 0 ? (
           <ContactList
@@ -67,9 +69,10 @@ export class App extends Component {
             onDeleteContact={this.deleteContact}
           />
         ) : (
-          <p className="contacts__message">No contacts added yet!</p>
+          <Message>No contacts added yet!</Message>
         )}
-      </div>
+        <GlobalStyles />
+      </Wrapper>
     );
   }
 }

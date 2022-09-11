@@ -1,23 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import s from './ContactListItem.module.css';
+import { Contact, Text, Button } from './ContactListItem.styled';
+import Avatar from 'react-avatar';
 
 const ContactListItem = ({ id, name, number, onDeleteContact }) => {
   return (
-    <li className={s.item}>
-      <p>
+    <Contact>
+      <Text>
+        <Avatar size="40" name={name} round={true} />
+        &nbsp;
         {name}:&nbsp;{number}
-      </p>
-      <button
-        className={s.button}
+      </Text>
+      <Button
         type="button"
         onClick={() => {
           onDeleteContact(id);
         }}
       >
         Delete
-      </button>
-    </li>
+      </Button>
+    </Contact>
   );
 };
 

@@ -1,21 +1,23 @@
-@import-normalize; /* bring in normalize.css styles */
+import styled from 'styled-components';
 
-/* .phonebook {
+export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   margin-top: 20px;
-}
+`;
 
-.phonebook__title {
+export const TitlePhonebook = styled.h1`
   font-size: 40px;
-}
-.contacts__title {
+`;
+
+export const TitleContacts = styled.h2`
   font-size: 32px;
-}
-.contacts__message {
+`;
+
+export const Message = styled.p`
   margin-top: 10px;
   font-size: 30px;
-} */
+`;
